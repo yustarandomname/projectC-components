@@ -42,7 +42,7 @@ So far we have implemented 8 components, we have a:
 6. Buttons
 7. Icons 
 
-For a full list visit our glitch site [here](https://projectc-components.glitch.me/) 
+For a full list visit our demo site [here](https://svelte.dev/repl/0ab58f1d867b45fb91a10967fbe6dd31?version=3.37.0) 
 
 ## Where can I help with this project?
 This project is maintained by a computer science student at TU Delft. In my free time I work on this project. If you would like to contribute, please send a pull request to the github repo [here](https://github.com/yustarandomname/projectC-components/pulls). Any issues are welcome ofcourse.

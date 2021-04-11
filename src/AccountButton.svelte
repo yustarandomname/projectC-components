@@ -2,7 +2,7 @@
   import Icon from "./Icon.svelte"
 
   export let user = false
-  export let settings = false
+  export const settings = false
 </script>
 
 <style>
