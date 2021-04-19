@@ -1,3 +1,7 @@
+<svelte:head>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</svelte:head>
+
 <script>
   export let name = "help-outline"
 </script>
@@ -11,4 +15,6 @@
   }
 </style>
 
-<ion-icon class="icon" name={name}></ion-icon>
+<slot>
+  <ion-icon class="icon" name={name}></ion-icon>
+</slot>

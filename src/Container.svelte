@@ -4,7 +4,7 @@
   export let background = "transparent";
   export let borderColor = "transparent";
   export let shadow = true;
-  export let margin = "1rem auto";
+  export let margin = "0 auto 1rem auto";
 </script>
 
 <style>
@@ -45,10 +45,10 @@
   }
 </style>
 
-<div
-  class="container {size}-size"
-  class:shadow
-  style="background: {background}; margin: {margin}; width: {width};
-  border-color: {borderColor}">
-  <slot />
-</div>
+  <div
+    class="container {size}-size"
+    class:shadow
+    style="background: {background}; margin: {margin}; width: {width};
+    border-color: {borderColor}">
+    <slot />
+  </div>

@@ -4,6 +4,7 @@
   export let size = "m";
   export let shadow = true
   export let data = { title: "please provide data" };
+  export let minHeight = 0;
 </script>
 
 <style>
@@ -15,7 +16,9 @@
 
 <div transition:fade>
   <Container {size} {shadow}>
-    <h3>{data.title}</h3>
-    <p>{data.content ? data.content : ''}</p>
+    <div style="min-height:{minHeight}">
+      <h3>{data.title}</h3>
+      <p>{data.content ? data.content : ''}</p>
+    </div>
   </Container>
 </div>
