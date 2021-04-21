@@ -1,6 +1,6 @@
 {
   "name": "projectc-components",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "test components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/yustarandomname/projectC-components.git"
   },
-  "keywords": [],
+  "keywords": ["svelte", "projectC", "components", "UI"],
   "author": "Abel de Bruijn",
   "license": "ISC",
   "bugs": {

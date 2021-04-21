@@ -1,10 +1,13 @@
 <script>
   export let size = "full";
   export let width = null;
-  export let background = "transparent";
-  export let borderColor = "transparent";
+  export let background = false;
+  export let borderColor = false;
   export let shadow = true;
   export let margin = "0 auto 1rem auto";
+  export let padding = false
+  export let header = false
+  export let hoverable = false
 </script>
 
 <style>
@@ -19,9 +22,26 @@
     border: 1px solid transparent;
   }
 
+  .withHeader {
+    margin-top: 2.5rem !important;
+    overflow: visible;
+  }
+  .withHeader:before {
+    content: attr(header);
+    position: absolute;
+    top: -1.8rem;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
   .shadow {
     box-shadow: 0.1rem 0.1rem 1rem rgb(0 0 0 / 10%);
   }
+
+
+  .hoverable { box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%); transition: 0.2s; }
+  .hoverable:hover { box-shadow: 0 0 .5rem rgb(0 0 0 / 30%); }
 
   .extra-small-size,
   .xs-size {
@@ -46,9 +66,9 @@
 </style>
 
   <div
-    class="container {size}-size"
+    class="container {size}-size" class:hoverable class:withHeader={header} {header}
     class:shadow
-    style="background: {background}; margin: {margin}; width: {width};
+    style="background: {background}; margin: {margin}; padding: {padding}; width: {width};
     border-color: {borderColor}">
     <slot />
   </div>

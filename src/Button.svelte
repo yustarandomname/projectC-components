@@ -1,16 +1,21 @@
 <script>
   import Container from "./Container.svelte";
+  import Icon from "./Icon.svelte"
 
   export let background = "transparent";
   export let borderColor = "transparent";
   export let margin = "0";
+  export let icon = false
 </script>
 
 <style>
-  .button {
+  button {
+    all: unset;
     height: 3rem;
-    width: 3rem;
+    width: fit-content;
     cursor: pointer;
+    outline: none;
+    background: transparent !important
   }
 
   .center {
@@ -19,10 +24,14 @@
   }
 </style>
 
-<div class="button" on:click>
-  <Container {background} {borderColor} {margin}>
+<button on:click>
+  <Container {background} shadow={false} {borderColor} {margin} hoverable={true}>
     <div class="center">
-      <slot />
+      {#if icon}
+        <Icon name={icon} />
+      {:else}
+        <slot />
+      {/if}
     </div>
   </Container>
-</div>
+</button>

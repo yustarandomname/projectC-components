@@ -6,6 +6,7 @@ import Form from "./form/index"
 import Icon from "./Icon.svelte"
 import Button from "./Button.svelte"
 import Navigation from "./Navigation.svelte"
+import Popup from "./Popup.svelte"
 
 export {
   Container,
@@ -15,5 +16,6 @@ export {
   Form,
   Icon,
   Button,
-  Navigation
+  Navigation,
+  Popup
 }

@@ -3,9 +3,11 @@
   import AccountButton from "./AccountButton.svelte"
 
   export let appName = "Project component"
-  export let navItems = []
+  export let links = []
   export let background = "#34aeebee"
-  export let authentication = true
+  
+  export let authentication = false
+  let authScreen = false
 </script>
 
 <style>
@@ -40,7 +42,12 @@
     font-weight: bold;
   }
 
-  .navItem {
+  .links {
+    display: flex;
+    align-items: center;
+  }
+
+  .links > * {
     margin-left: 1em;
   }
 </style>
@@ -51,13 +58,15 @@
       <div class="navBar">
         <a href="./" class="appName">{appName}</a>
   
-        <div class="navItems">
-          {#each navItems as navItem}
-            <a href={navItem.url} class="navItem">{navItem.title}</a>
+        <div class="links">
+          {#each links as link}
+            <a href={link.url} class="link">{link.title}</a>
           {/each}
 
           {#if authentication}
-            <AccountButton />
+            <div>
+              <AccountButton on:click={() => authScreen == true}/>
+            </div>
           {/if}
         </div>
       </div>

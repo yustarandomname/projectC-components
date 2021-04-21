@@ -1,15 +1,11 @@
-<svelte:head>
-  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-</svelte:head>
-
 <script>
   export let name = "help-outline"
 </script>
 
 <style>
   .icon {
-    height: 1em;
-    width: 1em;
+    height: 1.5em;
+    width: 1.5em;
     background-size:contain;
     background-repeat: no-repeat;
   }

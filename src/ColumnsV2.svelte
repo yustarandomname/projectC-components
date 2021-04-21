@@ -1,11 +1,11 @@
 <script>
-  import Button from "./Button.svelte";
   import Container from "./Container.svelte";
   import StyledContainer from "./StyledContainer.svelte";
 
   export let size = "m";
   export let data = []
-  export let defaultStyle = true;
+  export let customStyle = false;
+  export let header = false
 
   let columns = [
     data.filter((_,index) => index % 3 == 0),
@@ -22,15 +22,15 @@
   }
 </style>
 
-<Container shadow={false} {size}>
+<Container shadow={false} padding={"0em"} {header} {size}>
   <div class="columns">
     {#each columns as column}
       <div class="column">
         {#each column as item}
-          {#if defaultStyle}
-            <StyledContainer data={item} />
-          {:else}
+          {#if customStyle}
             <slot columnItem={item}></slot>
+          {:else}
+            <StyledContainer data={item} />
           {/if}
         {/each}
       </div>
