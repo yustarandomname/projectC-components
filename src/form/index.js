@@ -1,7 +1,7 @@
 import Dropdown from "./Dropdown.svelte"
-import Form from "./Form.svelte"
+import Text from "./Text.svelte"
 
 export default {
   Dropdown,
-  Form
+  Text
 }

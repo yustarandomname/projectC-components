@@ -1,6 +1,6 @@
 {
   "name": "projectc-components",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "description": "test components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -13,7 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/yustarandomname/projectC-components.git"
   },
-  "keywords": ["svelte", "projectC", "components", "UI"],
+  "keywords": [
+    "svelte",
+    "projectC",
+    "components",
+    "UI"
+  ],
   "author": "Abel de Bruijn",
   "license": "ISC",
   "bugs": {
@@ -23,7 +28,7 @@
   "devDependencies": {
     "rollup": "^1.28.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-svelte": "~6.1.1",
     "svelte": "^3.16.7"
   }
 }

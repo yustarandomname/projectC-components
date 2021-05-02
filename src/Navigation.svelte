@@ -2,7 +2,7 @@
   import Container from "./Container.svelte"
   import AccountButton from "./AccountButton.svelte"
 
-  export let appName = "Project component"
+  export let title = "Project component"
   export let links = []
   export let background = "#34aeebee"
   
@@ -56,7 +56,7 @@
   <nav>
     <Container {background}>
       <div class="navBar">
-        <a href="./" class="appName">{appName}</a>
+        <a href="./" class="appName">{title}</a>
   
         <div class="links">
           {#each links as link}

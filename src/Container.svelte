@@ -40,7 +40,7 @@
   }
 
 
-  .hoverable { box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%); transition: 0.2s; }
+  .hoverable { box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%); cursor:pointer; transition: 0.2s; }
   .hoverable:hover { box-shadow: 0 0 .5rem rgb(0 0 0 / 30%); }
 
   .extra-small-size,
