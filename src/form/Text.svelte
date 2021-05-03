@@ -1,19 +1,18 @@
 <script>
   export let placeholder = ""
   export let required = true
-  export let value = "test123"
+  export let value = ""
 </script>
 
 <style>
   input {
     all: inherit;
-    margin: 0;
-    width: fit-content;
+    margin: 0.8em 0 0.2em;
+    width: calc(100% - 2em - 2px);
     padding: 0.5em 1em;
     border: 1px solid #555;
     border-radius: 0.6em;
     cursor: pointer;
-    margin-bottom: 1em;
   }
 </style>
 
