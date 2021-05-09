@@ -1,6 +1,6 @@
 {
   "name": "projectc-components",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "description": "test components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

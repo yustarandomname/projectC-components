@@ -8,6 +8,8 @@
   export let padding = false
   export let header = false
   export let hoverable = false
+  export let highlight = false
+  export let overflow = false
 </script>
 
 <style>
@@ -15,9 +17,9 @@
     width: 100%;
     max-width: min(90vw, 100%);
     position: relative;
+    overflow: hidden;
     border-radius: 0.6rem;
     box-sizing: border-box;
-    overflow: hidden;
     padding: 0.75rem;
     border: 1px solid transparent;
   }
@@ -41,7 +43,8 @@
 
 
   .hoverable { box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%); cursor:pointer; transition: 0.2s; }
-  .hoverable:hover { box-shadow: 0 0 .5rem rgb(0 0 0 / 30%); }
+  .hoverable:hover,
+  .highlight { box-shadow: 0 0 .5rem rgb(0 0 0 / 30%); }
 
   .extra-small-size,
   .xs-size {
@@ -66,9 +69,9 @@
 </style>
 
   <div
-    class="container {size}-size" class:hoverable class:withHeader={header} {header}
+    class="container {size}-size" class:hoverable class:highlight class:withHeader={header} {header}
     class:shadow
     style="background: {background}; margin: {margin}; padding: {padding}; width: {width};
-    border-color: {borderColor}">
+    border-color: {borderColor}; overflow: {overflow}" on:click>
     <slot />
   </div>

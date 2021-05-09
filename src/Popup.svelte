@@ -41,8 +41,10 @@
 
   .exitButton {
     position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
+    right: -1.5rem;
+    top: -1.5rem;
+    background:white;
+    border-radius: 0.6em;
     z-index: 1;
   }
 </style>

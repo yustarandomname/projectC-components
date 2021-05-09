@@ -1,9 +1,7 @@
 <script>
-  import Button from "./Button.svelte"
-import Icon from "./Icon.svelte"
   import Popup from "./Popup.svelte"
 
-  export let user = {email: "user123@icloud.com", uid: "UH&9y8g4h94tgj39jdxc"}
+  export let user;
   let showAuth = false
 </script>
 
@@ -22,14 +20,5 @@ import Icon from "./Icon.svelte"
 </style>
 
 {#if user}
-  <p>{user.email}</p>
-{:else}
-  <div class="button" on:click={() => showAuth = true}>
-    <Icon name="person-circle-outline" />
-  </div>
-
-  <Popup show={showAuth} on:exit={() => showAuth = false}>
-    <h3>OAuth panel</h3>
-    <Button on:click={() => user = {email: "user123@icloud.com", uid: "UH&9y8g4h94tgj39jdxc"}}>Log in as user123</Button>
-  </Popup>
+  <div class="button" on:click>{user.email}</div>
 {/if}

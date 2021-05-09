@@ -6,8 +6,10 @@
   export let links = []
   export let background = "#34aeebee"
   
-  export let authentication = false
-  let authScreen = false
+  export let user = false
+
+  $: profileActions = false
+    
 </script>
 
 <style>
@@ -50,11 +52,19 @@
   .links > * {
     margin-left: 1em;
   }
+
+  /* Account actions */
+  .accountActions {
+    position:absolute;
+    right:0;
+    top: 4em;
+    cursor:pointer
+  }
 </style>
 
 <div class="navigation">
   <nav>
-    <Container {background}>
+    <Container overflow="visible" {background}>
       <div class="navBar">
         <a href="./" class="appName">{title}</a>
   
@@ -63,10 +73,16 @@
             <a href={link.url} class="link">{link.title}</a>
           {/each}
 
-          {#if authentication}
-            <div>
-              <AccountButton on:click={() => authScreen == true}/>
-            </div>
+          {#if user}
+            <AccountButton {user} on:click={() => profileActions = !profileActions}/>
+
+            {#if profileActions && $$slots.accountActions}
+              <div class="accountActions" on:click={() => profileActions = false}>
+                <Container background="white">
+                  <slot name="accountActions"/>
+                </Container>
+              </div>
+            {/if}
           {/if}
         </div>
       </div>

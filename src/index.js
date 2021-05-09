@@ -8,6 +8,7 @@ import Icon from "./Icon.svelte"
 import Button from "./Button.svelte"
 import Navigation from "./Navigation.svelte"
 import Popup from "./Popup.svelte"
+import Loading from "./Loading.svelte"
 
 export {
   Container,
@@ -19,5 +20,6 @@ export {
   Icon,
   Button,
   Navigation,
-  Popup
+  Popup,
+  Loading
 }
