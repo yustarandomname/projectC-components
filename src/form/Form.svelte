@@ -4,8 +4,8 @@
   export let size = "m"
   export let header = false
   export let submitMessage = "Submit form"
-  export let error;
-  export let feedback;
+  export let error = false;
+  export let feedback = false;
 </script>
 
 <style>
@@ -22,6 +22,7 @@
     border: 1px solid #555;
     border-radius: 0.6em;
     cursor: pointer;
+    user-select:none;
   }
 
   /* Feedback */
