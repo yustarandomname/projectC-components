@@ -37,21 +37,21 @@
   }
 
   /* TABS */
-
-  .tabContainer {
-    position:relative;
-    height: 10em;
+  .positionTabs {
+    white-space: nowrap;
+    transition: transform 0.5s;
   }
 
-  .positionTabs {
-    width: 300%;
-    display: flex;
-    position: absolute;
-    transition: left 0.5s;
+  .tab {
+    display: inline-block;
   }
 
   .tab:not(:first-child) {
     margin-left: 1em;
+  }
+
+  .tab:not(.tabSelected) {
+    cursor: pointer;
   }
 </style>
 
@@ -59,19 +59,20 @@
   <div class="tabs">
     <div class="selectors">
       {#each tabs as tab, index}
-        <div class="selector" on:click={() => selected = index} class:selected={selected == index}>{tab.props.title || tab.title}</div>
+        <div class="selector" class:selected={selected == index} on:click={() => selected = index}>
+          {tab.title || tab.props.title}
+        </div>
       {/each}
     </div>
-    <div class="tabContainer">
-      <div class="positionTabs" style="left: calc(-{selected * 40}em - {selected}em)">
-        {#each tabs as tab}
-          <div class="tab">
-            <Container size={tabSize} margin="0em">
-              <svelte:component this={tab.component} {...tab.props} />
-            </Container>
-          </div>
-        {/each}
-      </div>
+
+    <div class="positionTabs" style="transform: translateX(-{41 * selected}em)">
+      {#each tabs as tab, index}
+        <div class="tab" class:tabSelected={selected == index} on:click={() => selected = index}>
+          <Container size={tabSize} margin="0em">
+            <svelte:component this={tab.component} {...tab.props} />
+          </Container>
+        </div>
+      {/each}
     </div>
   </div>
 </Container>
