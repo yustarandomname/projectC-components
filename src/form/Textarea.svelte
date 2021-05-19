@@ -1,19 +1,18 @@
 <script>
+	import Input from "./Input.svelte"
+
   export let placeholder = ""
   export let required = true
   export let minRows = 4;
 	export let maxRows = 10;
   export let value = ""
+	export let header = false
 
   $: minHeight = `${1 + minRows * 1.2}em`;
 	$: maxHeight = maxRows ? `${1 + maxRows * 1.2}em` : `auto`;
 </script>
 
 <style>
-	.container {
-		position: relative;
-	}
-	
 	pre, textarea {
 		font-family: inherit;
 		padding: 0.5em;
@@ -35,12 +34,12 @@
 	}
 </style>
 
-<div class="container">
+<Input {header}>
 	<pre
 		aria-hidden="true"
 		style="min-height: {minHeight}; max-height: {maxHeight}"
 	>{value + '\n'}</pre>
 
 	<textarea type="text" {placeholder} {required} bind:value></textarea>
-</div>
+</Input>
 

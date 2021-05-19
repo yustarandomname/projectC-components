@@ -1,19 +1,12 @@
 <script>
+  import Input from "./Input.svelte"
+
   export let placeholder = ""
   export let required = true
   export let value = ""
+  export let header = false
 </script>
 
-<style>
-  input {
-    all: inherit;
-    margin: 0.8em 0 0.2em;
-    width: calc(100% - 2em - 2px);
-    padding: 0.5em 1em;
-    border: 1px solid #555;
-    border-radius: 0.6em;
-    cursor: pointer;
-  }
-</style>
-
-<input type="text" {placeholder} {required} bind:value>
+<Input {header}>
+  <input type="text" {placeholder} {required} bind:value>
+</Input>

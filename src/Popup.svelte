@@ -8,7 +8,7 @@
 
   const dispatch = createEventDispatcher()
 
-  const exit = () => dispatch('exit');
+  export const exit = () => dispatch('exit');
 </script>
 
 <style>
@@ -37,6 +37,7 @@
 
   .popup {
     position: relative;
+    max-width: 90vw;
   }
 
   .exitButton {
@@ -50,11 +51,11 @@
 </style>
 
 {#if show}
-  <div class="exitPopup" on:click={exit} />
+  <div class="exitPopup" on:click={() => {exit(); show = false}} />
   <div class="popupContainer">
     <div class="popup">
       <div class="exitButton">
-        <Button on:click={exit} icon="close-outline" />
+        <Button on:click={() => {exit(); show = false}} icon="close-outline" />
       </div>
       <Container {size} shadow={false} background="white">
         <slot />

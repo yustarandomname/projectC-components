@@ -25,6 +25,12 @@
     user-select:none;
   }
 
+  .secondarySubmit {
+    margin-top: 0.8em;
+    padding: 0.5em;
+    cursor: pointer;
+  }
+
   /* Feedback */
   .error,
   .feedback {
@@ -48,7 +54,10 @@
     {/if}
 
     {#if submitMessage}
-      <div class="positionSubmit" >
+      <div class="positionSubmit">
+        <div class="secondarySubmit">
+          <slot name="secondarySubmit"/>
+        </div>
         <button type="submit" class="submit">
           <slot name="submit">{submitMessage}</slot> 
         </button>

@@ -28,8 +28,10 @@
   }
 
   nav {
+    left: 0;
+    top: 1em;
     width: 100%;
-    position:fixed;
+    position: fixed;
     z-index: 10000;
   }
 

@@ -71,7 +71,9 @@
   <div
     class="container {size}-size" class:hoverable class:highlight class:withHeader={header} {header}
     class:shadow
-    style="background: {background}; margin: {margin}; padding: {padding}; width: {width};
+    style="
+      background: {background}; 
+      margin: {margin}; padding: {padding}; width: {width};
     border-color: {borderColor}; overflow: {overflow}" on:click>
     <slot />
   </div>
