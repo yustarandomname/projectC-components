@@ -7,9 +7,12 @@
   export let margin = "0 auto 1rem auto";
   export let padding = false
   export let header = false
+  export let overflow = false
+
+  // Classes
   export let hoverable = false
   export let highlight = false
-  export let overflow = false
+  export let noStyle = false
 </script>
 
 <style>
@@ -21,7 +24,7 @@
     border-radius: 0.6rem;
     box-sizing: border-box;
     padding: 0.75rem;
-    border: 1px solid transparent;
+    border: 0px solid transparent;
   }
 
   .withHeader {
@@ -66,14 +69,20 @@
   .xl-size {
     width: 100rem;
   }
+
+  .noStyle {
+    padding: 0;
+    overflow: visible;
+    box-shadow: none;
+  }
 </style>
 
   <div
-    class="container {size}-size" class:hoverable class:highlight class:withHeader={header} {header}
+    class="container {size}-size" class:hoverable class:highlight class:noStyle class:withHeader={header} {header}
     class:shadow
     style="
       background: {background}; 
       margin: {margin}; padding: {padding}; width: {width};
-    border-color: {borderColor}; overflow: {overflow}" on:click>
+      border-color: {borderColor}; overflow: {overflow}" on:click>
     <slot />
   </div>

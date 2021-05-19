@@ -9,6 +9,7 @@ import Button from "./Button.svelte"
 import Navigation from "./Navigation.svelte"
 import Popup from "./Popup.svelte"
 import Loading from "./Loading.svelte"
+import Tabs from "./Tabs.svelte"
 
 export {
   Container,
@@ -21,5 +22,6 @@ export {
   Button,
   Navigation,
   Popup,
-  Loading
+  Loading,
+  Tabs
 }
