@@ -68,7 +68,7 @@
     <div class="positionTabs" style="transform: translateX(-{41 * selected}em)">
       {#each tabs as tab, index}
         <div class="tab" class:tabSelected={selected == index} on:click={() => selected = index}>
-          <Container size={tabSize} margin="0em">
+          <Container {size} margin="0em">
             <svelte:component this={tab.component} {...tab.props} />
           </Container>
         </div>
