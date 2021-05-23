@@ -37,10 +37,12 @@ So far we have implemented 8 components, we have a:
 1. Container
 2. Grid 
 3. [!beta] Columns
-4. [!beta] Form 
-5. [!beta] Navigation bar (with authentication features)
+4. Form / Input
+5. Navigation bar (with authentication features)
 6. Buttons
 7. Icons 
+8. Popup
+9. Tabs (lazy loaded)
 
 For a full list visit our demo site [here](https://svelte.dev/repl/0ab58f1d867b45fb91a10967fbe6dd31?version=3.37.0) 
 
