@@ -2,12 +2,13 @@
   import Input from "./Input.svelte"
 
   export let options = [{}];
-  export let selected = "";
+  export let value = "";
   export let header = false
+  export let footer = false
 </script>
 
-<Input {header}>
-  <select bind:value={selected}>
+<Input {header} {footer}>
+  <select bind:value>
     {#each options as option}
       {#if option.value && option.name}
         <option value={option.value}>option.name</option>

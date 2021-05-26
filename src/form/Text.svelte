@@ -5,8 +5,9 @@
   export let required = true
   export let value = ""
   export let header = false
+  export let footer = false
 </script>
 
-<Input {header}>
+<Input {header} {footer}>
   <input type="text" {placeholder} {required} bind:value>
 </Input>

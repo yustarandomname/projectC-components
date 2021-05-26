@@ -1,13 +1,23 @@
 <script>
+  import Button from "../Button.svelte"
+
+  export let value = false
   export let header = false
   export let footer = false
 </script>
 
 <style>
-  div {
+  :global(.checkbox ~ div) {
+    margin: 0 !important;
+  }
+
+  :global(.checkbox ~ div input, .checkbox ~ div select) {
+    margin: 0.5em 0 0;
+    width: calc(100% - 2em - 2px);
+  }
+
+  .checkbox {
     position: relative;
-    margin: 0.8em 0 0.2em;
-    width: 100%;
   }
 
   .header { margin-top:1.4em; }
@@ -34,22 +44,12 @@
     bottom: -1.2em;
     text-transform: lowercase;
   }
-
-  :global(input),
-  :global(select) {
-    all: inherit;
-    width: calc(100% - 2em - 2px);
-    padding: 0.5em 1em;
-    border: 1px solid #555;
-    border-radius: 0.6em;
-    cursor: pointer;
-  }
-
-  :global(select) {
-    width: fit-content;
-  }
 </style>
 
-<div class:header class:footer data-header={header} data-footer={footer}>
-  <slot/>
+<div class="checkbox" class:header class:footer data-header={header} data-footer={footer} on:click={() => value = !value}>
+  {#if value}
+    <Button padding="0.4em" icon="radio-button-on-outline"/>
+  {:else}
+    <Button padding="0.4em" icon="radio-button-off-outline"/>
+  {/if}
 </div>

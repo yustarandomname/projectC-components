@@ -4,6 +4,7 @@
 
   export let background = "transparent";
   export let borderColor = "transparent";
+  export let padding = "0.75em"
   export let margin = "0";
   export let icon = false
 </script>
@@ -25,7 +26,7 @@
 </style>
 
 <button on:click>
-  <Container {background} shadow={false} {borderColor} {margin} hoverable={true}>
+  <Container {background} shadow={false} {borderColor} {padding} {margin} hoverable={true}>
     <div class="center">
       {#if icon}
         <Icon name={icon} />

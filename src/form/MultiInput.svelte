@@ -4,10 +4,10 @@
 </script>
 
 <style>
-  div {
+  .multiInput {
     position: relative;
-    margin: 0.8em 0 0.2em;
-    width: 100%;
+    display: flex;
+    gap: 1em;
   }
 
   .header { margin-top:1.4em; }
@@ -34,22 +34,8 @@
     bottom: -1.2em;
     text-transform: lowercase;
   }
-
-  :global(input),
-  :global(select) {
-    all: inherit;
-    width: calc(100% - 2em - 2px);
-    padding: 0.5em 1em;
-    border: 1px solid #555;
-    border-radius: 0.6em;
-    cursor: pointer;
-  }
-
-  :global(select) {
-    width: fit-content;
-  }
 </style>
 
-<div class:header class:footer data-header={header} data-footer={footer}>
-  <slot/>
+<div class="multiInput" class:header class:footer data-header={header} data-footer={footer}>
+  <slot />
 </div>

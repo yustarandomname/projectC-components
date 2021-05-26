@@ -5,6 +5,8 @@ import Password from "./Password.svelte"
 import Default from "./Default.svelte"
 import Textarea from "./Textarea.svelte"
 import Datetime from "./Datetime.svelte"
+import MultiInput from "./MultiInput.svelte"
+import Checkbox from "./Checkbox.svelte"
 
 export default {
   Dropdown,
@@ -13,5 +15,7 @@ export default {
   Password,
   Default,
   Textarea,
-  Datetime
+  Datetime,
+  MultiInput,
+  Checkbox
 }
