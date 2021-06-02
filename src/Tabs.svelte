@@ -30,10 +30,6 @@
     overflow-x: hidden;
   }
 
-  :global(.tab > .container) {
-    max-width: 100%
-  }
-
   /* SELECTORS */
   .selectors {
     display: flex;
@@ -59,41 +55,22 @@
     white-space: nowrap;
     transition: transform 0.5s;
   }
-
-  .tab {
-    display: inline-block;
-    max-width:90vw;
-  }
-
-  .tab:not(:first-child) {
-    margin-left: 1em;
-  }
-
-  .tab:not(.tabSelected) {
-    cursor: pointer;
-  }
 </style>
 
 <Container {size} noStyle={true}>
   <div class="tabs">
     <div class="selectors">
-      {#each tabs as tab, index}
-        <div class="selector" class:selected={selected == index} on:click={() => setTab(index)}>
-          {tab.title || tab.props.title}
-        </div>
-      {/each}
+      <slot name="tabBar">
+        {#each tabs as tab, index}
+          <div class="selector" class:selected={selected == index} on:click={() => setTab(index)}>
+            {tab}
+          </div>
+        {/each}
+      </slot>
     </div>
 
     <div class="positionTabs" style="transform: translateX(calc(-{100 * selected}% - {selected}em))">
-      {#each tabs as tab, index}
-        <div class="tab" class:tabSelected={selected == index} on:click={() => setTab(index)}>
-          <Container {size} margin="0em">
-            {#if loaded.has(index)}
-              <svelte:component this={tab.component} {...tab.props} />
-            {/if}
-          </Container>
-        </div>
-      {/each}
+      <slot/>
     </div>
   </div>
 </Container>

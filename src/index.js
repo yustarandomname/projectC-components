@@ -10,6 +10,7 @@ import Navigation from "./Navigation.svelte"
 import Popup from "./Popup.svelte"
 import Loading from "./Loading.svelte"
 import Tabs from "./Tabs.svelte"
+import TabItem from "./TabItem.svelte"
 
 export {
   Container,
@@ -23,5 +24,6 @@ export {
   Navigation,
   Popup,
   Loading,
-  Tabs
+  Tabs,
+  TabItem
 }

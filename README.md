@@ -48,3 +48,11 @@ For a full list visit our demo site [here](https://svelte.dev/repl/0ab58f1d867b4
 
 ## Where can I help with this project?
 This project is maintained by a computer science student at TU Delft. In my free time I work on this project. If you would like to contribute, please send a pull request to the github repo [here](https://github.com/yustarandomname/projectC-components/pulls). Any issues are welcome ofcourse.
+
+# What we are working on
+1. Image component
+2. Make tabs clickable again
+
+# Change log
+## version 1.2.5
+- Added better way of developing tabs
