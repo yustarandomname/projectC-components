@@ -5,6 +5,8 @@
   export let size = "m"
   export let selected = 0
 
+  $: modSelected = selected % tabs.length
+
   // initialize loaded with selected index + its neighbours
   let loaded = new Set()
 
@@ -62,14 +64,14 @@
     <div class="selectors">
       <slot name="tabBar">
         {#each tabs as tab, index}
-          <div class="selector" class:selected={selected == index} on:click={() => setTab(index)}>
+          <div class="selector" class:selected={modSelected == index} on:click={() => setTab(index)}>
             {tab}
           </div>
         {/each}
       </slot>
     </div>
 
-    <div class="positionTabs" style="transform: translateX(calc(-{100 * selected}% - {selected}em))">
+    <div class="positionTabs" style="transform: translateX(calc(-{100 * modSelected}% - {modSelected}em))">
       <slot/>
     </div>
   </div>

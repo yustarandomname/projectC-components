@@ -5,6 +5,7 @@ import Columns from "./ColumnsV2.svelte"
 import Input from "./form/index"
 import Form from "./form/Form.svelte"
 import Icon from "./Icon.svelte"
+import Image from "./Image.svelte"
 import Button from "./Button.svelte"
 import Navigation from "./Navigation.svelte"
 import Popup from "./Popup.svelte"
@@ -20,6 +21,7 @@ export {
   Input,
   Form,
   Icon,
+  Image,
   Button,
   Navigation,
   Popup,
