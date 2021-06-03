@@ -5,12 +5,14 @@
   export let src;
   export let alt;
   export let size = "m";
-  export let header;
+  export let header = false;
   export let height = "25em"
   export let noStyle = true
   export let position = "center"
 
   let magnified = false
+
+  // console.log(src)
 </script>
 
 <style>
